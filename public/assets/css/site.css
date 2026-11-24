@@ -1704,6 +1704,8 @@ details[open] summary {
 .prose table code {
   font-size:max(10px,.82em);
   padding-block:0;
+  -webkit-box-decoration-break:clone;
+  box-decoration-break:clone;
 }
 
 .nobr {
