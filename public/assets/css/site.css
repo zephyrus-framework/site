@@ -1872,6 +1872,10 @@ details[open] summary {
   color:#636f59;
 }
 
+.search-close svg {
+  display:none;
+}
+
 .search-results {
   padding:12px;
   max-height:390px;
@@ -2855,6 +2859,25 @@ html.motion-ready [data-reveal].is-visible {
   .search-input-row {
     padding:16px;
     gap:12px;
+  }
+  /* A 44 px target that takes no more room in the row than the ESC key did. */
+  .search-close {
+    display:grid;
+    place-items:center;
+    width:44px;
+    height:44px;
+    margin:-9.5px -10px -9.5px 0;
+    padding:0;
+    border:0;
+  }
+  .search-close:focus-visible {
+    outline-offset:-6px;
+  }
+  .search-close svg {
+    display:block;
+  }
+  .search-close span {
+    display:none;
   }
   .search-hint {
     padding:12px 16px;
