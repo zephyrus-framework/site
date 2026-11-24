@@ -111,7 +111,7 @@ PHP 8.4 or later with the `intl`, `mbstring`, `pdo`, `sodium` and `fileinfo` ext
 
 ## License and source
 
-Zephyrus is released under the MIT license. The package is `zephyrus-framework/core` on Packagist and the source is at [github.com/ophelios-studio/zephyrus-core](https://github.com/ophelios-studio/zephyrus-core).
+Zephyrus is released under the MIT license. The package is `zephyrus-framework/core` on Packagist and the source is at [github.com/zephyrus-framework/core](https://github.com/zephyrus-framework/core).
 
 ## Where to read next
 

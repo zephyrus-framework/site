@@ -39,7 +39,7 @@ jobs:
         shell: bash
         run: |
           curl --fail --silent --show-error --location --retry 3 \
-            "https://github.com/ophelios-studio/zephyrus-leaf-cli/releases/download/${LEAF_VERSION}/leaf-linux-amd64" \
+            "https://github.com/zephyrus-framework/leaf-cli/releases/download/${LEAF_VERSION}/leaf-linux-amd64" \
             --output "$RUNNER_TEMP/leaf"
           printf '%s  %s\n' \
             'efcd45bddfcf184fdb6affa9260fad1f7daf2b3afe436286b5a08852916549a6' \

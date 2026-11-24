@@ -111,7 +111,7 @@ PHP 8.4 ou plus récent avec les extensions `intl`, `mbstring`, `pdo`, `sodium` 
 
 ## Licence et code source
 
-Zephyrus est publié sous la licence MIT. Le paquet est `zephyrus-framework/core` sur Packagist et le code source se trouve à [github.com/ophelios-studio/zephyrus-core](https://github.com/ophelios-studio/zephyrus-core).
+Zephyrus est publié sous la licence MIT. Le paquet est `zephyrus-framework/core` sur Packagist et le code source se trouve à [github.com/zephyrus-framework/core](https://github.com/zephyrus-framework/core).
 
 ## Où poursuivre la lecture
 
