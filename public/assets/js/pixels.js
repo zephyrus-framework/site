@@ -13,7 +13,7 @@
   // Sample the exact brand path, cropped to the mark's drawing area.
   ink.scale(2, 2); ink.translate(-2, -6);
   ink.lineWidth = 2.4; ink.lineCap = 'round'; ink.lineJoin = 'round';
-  ink.stroke(new Path2D('M5 9h25L7 27h24M5 15h17M14 21h17'));
+  ink.stroke(new Path2D('M5 9h25L7 27h24M5 15h17M14.667 21H31'));
   const bitmap = ink.getImageData(0, 0, 64, 48).data;
   const seeds = [];
   for (let y = 0; y < 48; y++) for (let x = 0; x < 64; x++) {
