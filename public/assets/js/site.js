@@ -206,7 +206,8 @@
     if (rendered.length) { results.setAttribute('role', 'listbox'); results.setAttribute('aria-label', input.getAttribute('aria-label')); select(0); }
     else { results.removeAttribute('role'); results.removeAttribute('aria-label'); input.removeAttribute('aria-activedescendant'); }
     if (!matches.length) { const empty = document.createElement('p'); empty.className = 'search-empty'; empty.textContent = ui.noResults; results.append(empty); }
-    status.textContent = matches.length ? resultCount(matches.length) : ui.noResults;
+    const announcement = matches.length ? resultCount(matches.length) : ui.noResults;
+    if (status.textContent !== announcement) status.textContent = announcement;
   }
   async function openSearch(event) {
     if (dialog.open) return;
