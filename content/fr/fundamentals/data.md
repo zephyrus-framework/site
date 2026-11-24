@@ -207,6 +207,8 @@ $db->transaction(function (Database $db) use ($actor, $userId, $id): void {
 
 Les valeurs sont des chaînes non vides, pour les clés déclarées seulement. Chaque refus est une `DatabaseActorException`, dont le message ne contient jamais de valeur :
 
+<div class="refusal-table">
+
 | Appel | Refus |
 |---|---|
 | `actAs(['actor_id' => 7], ...)` | `The actor value for "actor_id" must be a string, int given: cast it first, such as (string) $userId.` |
@@ -215,6 +217,8 @@ Les valeurs sont des chaînes non vides, pour les clés déclarées seulement. C
 | `actAs()` dans `transaction()` | `DatabaseActor::actAs() opens its own transaction and refuses one already open, where the actor would outlive the callback until that transaction ends: call actAs() outside any transaction, or publish() inside the open one.` |
 | `publish()` hors transaction | `DatabaseActor::publish() needs an open transaction: outside one, PostgreSQL drops the actor before the next statement. Use actAs(), or call publish() inside Database::transaction().` |
 | un second acteur dans la même transaction | `An actor is already published on this connection ("app.actor_id" is set): an actor changes only by ending its transaction, and a value set for the whole session is refused.` |
+
+</div>
 
 Le constructeur refuse une connexion autre que PostgreSQL, ainsi qu’un préfixe ou une clé qui ne compte pas de 1 à 63 lettres minuscules, chiffres et soulignés sans commencer par un chiffre (`The actor key "Actor-Id" is not a valid setting name: use 1 to 63 lowercase letters, digits and underscores, not starting with a digit.`).
 
@@ -352,11 +356,15 @@ final class ProjectService
 
 Une propriété que l’entité ne peut pas écrire est refusée par une `InvalidArgumentException`, là où PHP levait une `Error` brute. Une propriété readonly laissée non initialisée et une propriété `protected(set)` sont hydratées, et `json_encode()` omet une propriété virtuelle sans crochet `get`.
 
+<div class="refusal-table">
+
 | Propriété | Refus |
 |---|---|
 | `public readonly int $id`, posée par le constructeur | `Cannot hydrate property $id of App\Models\Project: it is readonly and its constructor already set it. Leave it unset in the constructor, or drop readonly.` |
 | `public private(set) string $name` | `Cannot hydrate property $name of App\Models\Project: its private(set) visibility keeps Entity from writing it. Use protected(set) instead.` |
 | `public string $label { get => ... }`, virtuelle sans crochet `set` | `Cannot hydrate property $label of App\Models\Project: it is virtual with no set hook. Alias the column in the query, or give the property a set hook.` |
+
+</div>
 
 ### Sérialisation des entités
 

@@ -200,6 +200,8 @@ $builder = $builder->withDebugClientAllowlist(env('DEBUG_CLIENTS'));
 
 An entry is an exact address, or `<secret>@address`, which also requires the cookie `tracy-debug=<secret>`. A bare loopback entry (`127.0.0.1`, `::1`) admits no request that carries `X-Forwarded-For`, `Forwarded` or `X-Real-IP`: behind a proxy on the same host, list `<secret>@127.0.0.1` and send the cookie. Version 0.14.0 admitted loopback whatever the allowlist said. A string may list several entries separated by commas or spaces, or you can pass an array with one entry per element. Entries are checked when you register them:
 
+<div class="refusal-table">
+
 | Entry | Refusal |
 | --- | --- |
 | `@172.17.0.1` | `Debug client allowlist entry 1 has an empty secret before "@": with no tracy-debug cookie it would admit every client at that address. Set a secret, or list the bare address if that is intended.` |
@@ -207,6 +209,8 @@ An entry is an exact address, or `<secret>@address`, which also requires the coo
 | `<secret>@` | `Debug client allowlist entry 1 has no address after "@".` |
 | `10.0.0.0/8` | `Debug client allowlist entry 1 is a range: Tracy matches exact addresses only, so list each address.` |
 | array element `'a b'` | `Debug client allowlist entry 1 holds whitespace or a comma: pass each address as its own array entry.` |
+
+</div>
 
 A bare address with no secret admits anyone who can reach PHP from it, so prefer `<secret>@address`, with a secret of 16 random characters or more, such as `bin2hex(random_bytes(16))`: a shorter one is refused. Version 0.16 accepted any non-empty secret. The messages name the position of the entry and never repeat the secret.
 

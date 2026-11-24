@@ -2844,6 +2844,30 @@ html.motion-ready [data-reveal].is-visible {
   .balanced-table td {
     text-wrap:balance;
   }
+  .refusal-table thead {
+    position:absolute;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    clip-path:inset(50%);
+    white-space:nowrap;
+  }
+  .refusal-table table:before {
+    content:none;
+  }
+  .refusal-table tbody,.refusal-table tr,.refusal-table td {
+    display:block;
+  }
+  .refusal-table tbody {
+    border-top:1px solid #d7decc;
+  }
+  .refusal-table td:first-child {
+    padding-bottom:0;
+    border-bottom:0;
+  }
+  .refusal-table td+td {
+    padding-top:8px;
+  }
   .docs-pagination {
     gap:16px;
   }

@@ -200,6 +200,8 @@ $builder = $builder->withDebugClientAllowlist(env('DEBUG_CLIENTS'));
 
 Une entrée est une adresse exacte, ou `<secret>@address`, qui exige aussi le témoin `tracy-debug=<secret>`. Une entrée de bouclage nue (`127.0.0.1`, `::1`) n’admet aucune requête qui porte `X-Forwarded-For`, `Forwarded` ou `X-Real-IP` : derrière un mandataire du même hôte, inscrivez `<secret>@127.0.0.1` et envoyez le témoin. La version 0.14.0 admettait le bouclage quelle que soit la liste. Une chaîne peut énumérer plusieurs entrées séparées par des virgules ou des espaces, ou vous pouvez passer un tableau avec une entrée par élément. Les entrées sont vérifiées lorsque vous les enregistrez :
 
+<div class="refusal-table">
+
 | Entrée | Refus |
 | --- | --- |
 | `@172.17.0.1` | `Debug client allowlist entry 1 has an empty secret before "@": with no tracy-debug cookie it would admit every client at that address. Set a secret, or list the bare address if that is intended.` |
@@ -207,6 +209,8 @@ Une entrée est une adresse exacte, ou `<secret>@address`, qui exige aussi le t�
 | `<secret>@` | `Debug client allowlist entry 1 has no address after "@".` |
 | `10.0.0.0/8` | `Debug client allowlist entry 1 is a range: Tracy matches exact addresses only, so list each address.` |
 | élément de tableau `'a b'` | `Debug client allowlist entry 1 holds whitespace or a comma: pass each address as its own array entry.` |
+
+</div>
 
 Une adresse seule, sans secret, admet quiconque peut atteindre PHP depuis cette adresse : préférez donc `<secret>@address`, avec un secret d’au moins 16 caractères aléatoires, comme `bin2hex(random_bytes(16))` : un secret plus court est refusé. La version 0.16 acceptait tout secret non vide. Les messages nomment la position de l’entrée et ne répètent jamais le secret.
 
