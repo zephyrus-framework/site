@@ -2927,6 +2927,12 @@ html.motion-ready [data-reveal].is-visible {
   }
 }
 
+@media(pointer:coarse) {
+  .search-hint>span:first-child {
+    display:none;
+  }
+}
+
 @media(prefers-reduced-motion:reduce) {
   html {
     scroll-behavior:auto;
