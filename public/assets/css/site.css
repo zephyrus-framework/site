@@ -764,7 +764,7 @@ h2 em {
 }
 
 .token-comment {
-  color:#70896d;
+  color:#768f73;
 }
 
 .token-keyword {
@@ -1479,7 +1479,7 @@ details[open] summary {
   font-size:9px;
   text-transform:uppercase;
   letter-spacing:.07em;
-  color:#7a886a;
+  color:#647154;
   margin-bottom:11px;
 }
 
@@ -1493,7 +1493,7 @@ details[open] summary {
   display:block;
   padding:10px 12px;
   font-size:12px;
-  color:#78836e;
+  color:#66705c;
   border-left:1px solid #cdd5c1;
   transition:.2s;
 }
@@ -1517,14 +1517,14 @@ details[open] summary {
 .sidebar-footer>p {
   font-size:10px;
   line-height:1.9;
-  color:#8b947f;
+  color:#68705c;
 }
 
 .sidebar-footer>a {
   display:inline-flex;
   gap:9px;
   font-size:10px;
-  color:#60794b;
+  color:#546c3f;
   margin-top:14px;
 }
 
@@ -1541,12 +1541,12 @@ details[open] summary {
   gap:10px;
   font-family:var(--mono);
   font-size:9px;
-  color:#8a957d;
+  color:#66705a;
   margin-bottom:28px;
 }
 
 .docs-breadcrumb span:last-child {
-  color:#566b40;
+  color:#4d6137;
 }
 
 .prose>h1 {
@@ -1558,7 +1558,7 @@ details[open] summary {
 
 .prose>h1+p {
   font-size:20px;
-  color:#7b876f;
+  color:#657159;
   margin-bottom:35px;
   line-height:1.5;
 }
@@ -1739,7 +1739,7 @@ details[open] summary {
 .pagination-label {
   font-family:var(--mono);
   font-size:9px;
-  color:#91a279;
+  color:#63724b;
 }
 
 .pagination-title {
@@ -1770,7 +1770,7 @@ details[open] summary {
   text-transform:uppercase;
   letter-spacing:.08em;
   font-weight:400;
-  color:#7a8969;
+  color:#637253;
   margin:0 0 18px;
 }
 
@@ -1786,7 +1786,7 @@ details[open] summary {
 
 .toc-link {
   font-size:11px;
-  color:#8a947c;
+  color:#677059;
   line-height:1.6;
   display:block;
   border-left:1px solid transparent;
@@ -1808,7 +1808,7 @@ details[open] summary {
   border-top:1px solid var(--paper-line);
   padding-top:20px;
   margin-top:30px;
-  color:#7c8d67;
+  color:#62724d;
 }
 
 .docs-mobile-bar {
@@ -1950,7 +1950,7 @@ details[open] summary {
 }
 
 .error-page>.mono {
-  color:#809667;
+  color:#5e7346;
 }
 
 .error-page h1 {
@@ -1961,7 +1961,7 @@ details[open] summary {
 
 .error-page p {
   font-size:15px;
-  color:#738369;
+  color:#627158;
   line-height:1.8;
   margin-bottom:35px;
 }
@@ -2744,7 +2744,7 @@ html.motion-ready [data-reveal].is-visible {
     position:sticky;
     top:72px;
     z-index:15;
-    color:#687d51;
+    color:#5b6f44;
   }
   .docs-mobile-bar>.mono {
     font-size:8px;
@@ -2808,6 +2808,7 @@ html.motion-ready [data-reveal].is-visible {
   }
   .docs-breadcrumb {
     font-size:8px;
+    color:#606b54;
     margin-bottom:22px;
   }
   .prose>h1 {
