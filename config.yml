@@ -33,5 +33,4 @@ leaf:
   author_url: "https://ophelios.com"
   license: "MIT"
   post_build:
-    - ["php", "scripts/finalize-seo.php"]
     - ["php", "scripts/index-search.php"]

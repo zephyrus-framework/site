@@ -18,7 +18,7 @@ Open `http://127.0.0.1:4173` for English or `http://127.0.0.1:4173/fr/` for Fren
 leaf build
 ```
 
-The deployable output is `dist/`. All styles, scripts and fonts are served locally. No CDN or frontend bundler is required. The production URL is `https://zephyrus.ophelios.com`, configured through Leaf. Builds generate canonical links, reciprocal EN/FR/x-default alternatives, a multilingual sitemap and robots file. A PHP post-build hook removes the two error routes from the sitemap; both error pages carry `noindex`.
+The deployable output is `dist/`. All styles, scripts and fonts are served locally. No CDN or frontend bundler is required. The production URL is `https://zephyrus.ophelios.com`, configured through Leaf. Builds generate canonical links, reciprocal EN/FR/x-default alternatives, a multilingual sitemap and robots file. Leaf leaves both error pages out of the sitemap, and both carry `noindex`.
 
 Stop `leaf dev` before running a separate `leaf build`, since both commands publish into `dist/`.
 
