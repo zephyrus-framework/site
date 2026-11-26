@@ -2865,6 +2865,11 @@ html.motion-ready [data-reveal].is-visible {
   .refusal-table td:first-child {
     padding-bottom:0;
     border-bottom:0;
+    font-weight:600;
+    color:var(--ink);
+  }
+  .refusal-table td:first-child code {
+    color:inherit;
   }
   .refusal-table td+td {
     padding-top:8px;
