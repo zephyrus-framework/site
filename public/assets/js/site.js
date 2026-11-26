@@ -134,6 +134,14 @@
     }), { rootMargin: '-120px 0px -60% 0px', threshold: 0 });
     headings.forEach(heading => observer.observe(heading));
   }
+  // Safari drops the semantics of a table whose parts are no longer displayed as a table, as on narrow screens.
+  document.querySelectorAll('.prose table').forEach(table => {
+    table.setAttribute('role', 'table');
+    table.querySelectorAll('thead, tbody, tfoot').forEach(group => group.setAttribute('role', 'rowgroup'));
+    table.querySelectorAll('tr').forEach(row => row.setAttribute('role', 'row'));
+    table.querySelectorAll('th').forEach(cell => cell.setAttribute('role', cell.closest('thead') ? 'columnheader' : 'rowheader'));
+    table.querySelectorAll('td').forEach(cell => cell.setAttribute('role', 'cell'));
+  });
 
   const dialog = document.querySelector('.search-dialog');
   if (!dialog) return;
