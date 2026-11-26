@@ -1,5 +1,19 @@
 {layout 'layouts/landing.latte'}
-{block head}{include 'partials/head.latte', isNotFound: true}{/block}
+{block head}{include 'partials/head.latte', isNotFound: true}
+{var $otherLocales = array_values(array_unique(array_diff($supportedLocales, [$defaultLocale])))}
+<script n:if="$otherLocales" data-base-url="{$leafBaseUrl}" data-locales="{implode(' ', $otherLocales)}">
+// Hosts that answer every missing path with the root 404.html (GitHub Pages) get the page in the language of the URL.
+(function (script) {
+    var base = script.getAttribute('data-base-url');
+    var path = location.pathname;
+    var locale = path.indexOf(base + '/') === 0 ? path.slice(base.length + 1).split('/')[0] : '';
+    var target = base + '/' + locale + '/404.html';
+    if (locale && locale !== document.documentElement.lang && script.getAttribute('data-locales').split(' ').indexOf(locale) !== -1 && path !== target) {
+        location.replace(target);
+    }
+})(document.currentScript);
+</script>
+{/block}
 {block content}
 {var $localePrefix = ($currentLocale ?? 'en') === ($defaultLocale ?? 'en') ? '' : '/' . $currentLocale}
 <main id="main" class="error-page"><span class="mono">{localize('error.label')}</span><h1>{localize('error.title')}</h1><p>{localize('error.body')}</p><a class="button button-dark" href="{$leafBaseUrl}{$localePrefix}/">{localize('error.back')} <span>↗</span></a></main>{/block}
