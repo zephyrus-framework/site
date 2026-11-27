@@ -179,9 +179,14 @@
     }
     return low;
   }
-  function snippet(entry, term) {
+  function bodyHit(entry, term) {
     const text = entry.page.text, at = entry.text.indexOf(term);
-    const start = originalOffset(text, at), end = originalOffset(text, at + term.length - 1) + 1;
+    return { start: originalOffset(text, at), end: originalOffset(text, at + term.length - 1) + 1 };
+  }
+  // The section that holds a hit is the last heading starting before it; a hit above the first heading opens the page top.
+  const sectionAnchor = (page, offset) => (page.anchors ?? []).findLast(([start]) => start <= offset)?.[1] ?? null;
+  function snippet(entry, { start, end }) {
+    const text = entry.page.text;
     let from = Math.max(0, start - 40), to = Math.min(text.length, end + 80);
     const spaceAfterFrom = text.indexOf(' ', from), spaceBeforeTo = text.lastIndexOf(' ', to);
     if (from > 0 && spaceAfterFrom !== -1 && spaceAfterFrom < start) from = spaceAfterFrom + 1;
@@ -192,11 +197,13 @@
     const fields = terms.map(term => SEARCH_FIELDS.findIndex(field => entry[field].includes(term)));
     if (fields.includes(-1)) return null;
     const bodyTerm = terms.find((term, position) => SEARCH_FIELDS[fields[position]] === 'text');
+    const hit = bodyTerm === undefined ? null : bodyHit(entry, bodyTerm);
     return {
       page: entry.page,
       score: fields.reduce((sum, field) => sum + field, 0),
       hits: terms.reduce((sum, term) => sum + entry.text.split(term).length - 1, 0),
-      summary: bodyTerm === undefined ? clip(entry.page.excerpt, 120) : snippet(entry, bodyTerm),
+      summary: hit === null ? clip(entry.page.excerpt, 120) : snippet(entry, hit),
+      anchor: hit === null ? null : sectionAnchor(entry.page, hit.start),
     };
   }
   function select(index) {
@@ -213,9 +220,9 @@
     const matches = searchIndex.map(entry => match(entry, terms)).filter(Boolean);
     matches.sort((a, b) => a.score - b.score || b.hits - a.hits);
     results.replaceChildren(); selected = 0;
-    matches.forEach(({ page, summary }, index) => {
+    matches.forEach(({ page, summary, anchor }, index) => {
       const id = 'search-result-' + index;
-      const link = document.createElement('a'); link.className = 'search-result'; link.href = page.url + '/';
+      const link = document.createElement('a'); link.className = 'search-result'; link.href = page.url + '/' + (anchor ? '#' + encodeURIComponent(anchor) : '');
       link.id = id; link.setAttribute('role', 'option'); link.setAttribute('aria-selected', 'false');
       link.setAttribute('aria-labelledby', id + '-title'); link.setAttribute('aria-describedby', id + '-section ' + id + '-excerpt');
       const section = document.createElement('span'); section.id = id + '-section'; section.textContent = sectionLabel(page.section);
