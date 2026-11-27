@@ -1792,6 +1792,7 @@ details[open] summary {
   text-transform:uppercase;
   letter-spacing:.08em;
   font-weight:400;
+  line-height:normal;
   color:#637253;
   margin:0 0 18px;
 }
