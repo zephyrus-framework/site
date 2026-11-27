@@ -188,6 +188,8 @@
   }
   // The section that holds a hit is the last heading starting before it; a hit above the first heading opens the page top.
   const sectionAnchor = (page, offset) => (page.anchors ?? []).findLast(([start]) => start <= offset)?.[1] ?? null;
+  // A term found in a heading opens the page at that heading: the index lists headings and anchors in the same order.
+  const headingAnchor = (page, term) => page.anchors?.[page.headings.findIndex(heading => normalize(heading).includes(term))]?.[1] ?? null;
   function snippet(entry, { start, end }) {
     const text = entry.page.text;
     let from = Math.max(0, start - 40), to = Math.min(text.length, end + 80);
@@ -200,13 +202,14 @@
     const fields = terms.map(term => SEARCH_FIELDS.findIndex(field => entry[field].includes(term)));
     if (fields.includes(-1)) return null;
     const bodyTerm = terms.find((term, position) => SEARCH_FIELDS[fields[position]] === 'text');
+    const headingTerm = terms.find((term, position) => SEARCH_FIELDS[fields[position]] === 'headings');
     const hit = bodyTerm === undefined ? null : bodyHit(entry, bodyTerm);
     return {
       page: entry.page,
       score: fields.reduce((sum, field) => sum + field, 0),
       hits: terms.reduce((sum, term) => sum + entry.text.split(term).length - 1, 0),
       summary: hit === null ? clip(entry.page.excerpt, 120) : snippet(entry, hit),
-      anchor: hit === null ? null : sectionAnchor(entry.page, hit.start),
+      anchor: hit !== null ? sectionAnchor(entry.page, hit.start) : headingTerm === undefined ? null : headingAnchor(entry.page, headingTerm),
     };
   }
   function select(index) {
