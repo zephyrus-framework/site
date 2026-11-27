@@ -1737,8 +1737,9 @@ details[open] summary {
   color:#56614c;
 }
 
+/* 10 px paints the straight quote below AA; 10.4 px lifts it to full colour without widening the columns. */
 .prose table code {
-  font-size:max(10px,.82em);
+  font-size:10.4px;
   padding-block:0;
   -webkit-box-decoration-break:clone;
   box-decoration-break:clone;
