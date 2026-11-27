@@ -4,12 +4,14 @@
 .language-switch {
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 3px;
   font: 10px var(--mono);
   letter-spacing: .04em;
 }
 .language-switch a {
+  min-width: 24px;
   padding: 12px 3px;
+  text-align: center;
   color: #869b7c;
   position: relative;
 }
@@ -18,8 +20,8 @@
   content: '';
   position: absolute;
   bottom: 5px;
-  left: 3px;
-  right: 3px;
+  left: 6px;
+  right: 6px;
   height: 1px;
   background: var(--acid);
 }
@@ -145,7 +147,7 @@
   .built-sites > a { justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #bfc9ae; }
   .landing-page .github-link { display: none; }
   .header-actions { gap: 8px; }
-  .language-switch { gap: 5px; font-size: 9px; }
+  .language-switch { gap: 0; font-size: 9px; }
   .language-switch a { padding: 12px 3px; }
   .docs-page .header-actions { gap: 15px; }
   .code-tabs { grid-template-columns: repeat(2, 1fr); gap: 8px 18px; }
@@ -328,6 +330,7 @@
   .site-footer > div { flex-direction: row; align-items: center; width: 100%; justify-content: space-between; }
   .ophelios-signature img { width: 30px; height: 21px; }
 }
+@media (max-width: 360px) { .landing-page .header-actions { gap: 4px; } }
 @media (prefers-reduced-motion: reduce) { .chain-signal { animation: none; } }
 
 .copy-button { display: inline-flex; align-items: center; gap: 8px; }
