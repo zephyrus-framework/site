@@ -1700,7 +1700,7 @@ details[open] summary {
 .table-scroll {
   overflow-x:auto;
   margin:24px 0;
-  background:linear-gradient(90deg,var(--paper) 50%,#f3f2e900) left/48px 100% no-repeat local,linear-gradient(270deg,var(--paper) 50%,#f3f2e900) right/48px 100% no-repeat local,linear-gradient(90deg,#151b1840,#151b1800) left/20px 100% no-repeat scroll,linear-gradient(270deg,#151b1840,#151b1800) right/20px 100% no-repeat scroll;
+  background:linear-gradient(90deg,var(--paper) 50%,#f3f2e900) left/48px 100% no-repeat local,linear-gradient(270deg,var(--paper) 50%,#f3f2e900) right/48px 100% no-repeat local,linear-gradient(90deg,#151b181a,#151b1800) left/20px 100% no-repeat scroll,linear-gradient(270deg,#151b181a,#151b1800) right/20px 100% no-repeat scroll;
 }
 
 .table-scroll>table {
@@ -1725,7 +1725,7 @@ details[open] summary {
 .prose td {
   padding:13px 12px;
   border-bottom:1px solid #d7decc;
-  color:#636f59;
+  color:#56614c;
 }
 
 .prose table code {
