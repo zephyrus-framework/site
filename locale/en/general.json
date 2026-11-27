@@ -221,12 +221,12 @@
     "no_results": "No chapters found. Try “routing” or “configuration”.",
     "results_one": "{count} chapter found",
     "results_other": "{count} chapters found",
-    "pause": "Pause hero animation",
-    "resume": "Resume hero animation",
+    "pause": "Live, pause hero animation",
+    "resume": "Paused, resume hero animation",
     "live": "LIVE",
     "paused": "PAUSED",
-    "pause_cta": "Pause pixel animation",
-    "resume_cta": "Resume pixel animation"
+    "pause_cta": "Live, pause pixel animation",
+    "resume_cta": "Paused, resume pixel animation"
   },
   "demo": {
     "greeting": "Hello, {name}",

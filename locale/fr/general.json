@@ -221,12 +221,12 @@
     "no_results": "Aucun chapitre trouvé. Essayez « routage » ou « configuration ».",
     "results_one": "{count} chapitre trouvé",
     "results_other": "{count} chapitres trouvés",
-    "pause": "Mettre l’animation en pause",
-    "resume": "Reprendre l’animation",
+    "pause": "En direct, mettre l’animation en pause",
+    "resume": "En pause, reprendre l’animation",
     "live": "EN DIRECT",
     "paused": "EN PAUSE",
-    "pause_cta": "Mettre les pixels en pause",
-    "resume_cta": "Reprendre l’animation des pixels"
+    "pause_cta": "En direct, mettre les pixels en pause",
+    "resume_cta": "En pause, reprendre l’animation des pixels"
   },
   "demo": {
     "greeting": "Bonjour, {name}",
