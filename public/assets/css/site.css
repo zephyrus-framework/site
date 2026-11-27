@@ -121,7 +121,7 @@ h2 {
 
 h2 em {
   font-style:normal;
-  color:#75954a;
+  color:#6b8a40;
 }
 
 .mono,.eyebrow {
@@ -150,7 +150,7 @@ h2 em {
 }
 
 .section-label>.mono {
-  opacity:.55;
+  opacity:.63;
 }
 
 .status-dot {
@@ -416,7 +416,7 @@ h2 em {
 
 .art-cross {
   position:absolute;
-  color:#6d8069;
+  color:#73876f;
   font-family:var(--mono);
   font-size:18px;
 }
@@ -527,7 +527,7 @@ h2 em {
 .spec-strip i {
   font-style:normal;
   font-size:8px;
-  opacity:.5;
+  opacity:.63;
   margin-right:17px;
 }
 
@@ -594,7 +594,7 @@ h2 em {
 }
 
 .principles .mono {
-  color:#708061;
+  color:#647355;
   font-size:9px;
 }
 
@@ -648,7 +648,7 @@ h2 em {
   background:none;
   border:0;
   border-bottom:1px solid #cbd1c0;
-  color:#6f7a64;
+  color:#636d58;
   transition:color .2s;
 }
 
@@ -670,7 +670,7 @@ h2 em {
   letter-spacing:0;
   margin-top:10px;
   font-weight:400;
-  color:#777f6e;
+  color:#656c5c;
 }
 
 .tab-arrow {
@@ -1083,7 +1083,7 @@ details[open] summary {
 
 .ecosystem-leaf .mono {
   font-size:9px;
-  color:#6d7d58;
+  color:#5a6945;
 }
 
 .ecosystem-leaf h3 {
@@ -1106,7 +1106,7 @@ details[open] summary {
 }
 
 .ecosystem-leaf p {
-  color:#5c6c50;
+  color:#59694e;
   font-size:14px;
   line-height:1.8;
   max-width:360px;
@@ -1129,7 +1129,7 @@ details[open] summary {
 
 .built-sites>.mono {
   font-size:9px;
-  color:#657655;
+  color:#596949;
 }
 
 .built-sites>a {
@@ -1169,7 +1169,7 @@ details[open] summary {
 .docs-teaser-main p {
   font-size:14px;
   line-height:1.8;
-  color:#747c6d;
+  color:#697163;
   margin:22px 0 28px;
 }
 
@@ -1212,12 +1212,12 @@ details[open] summary {
 }
 
 .mini-top>span:first-child>span {
-  color:#7b994b;
+  color:#607d2f;
 }
 
 .mini-top .mono {
   font-size:7px;
-  color:#778769;
+  color:#637355;
 }
 
 .mini-top .mono>span {
@@ -1237,7 +1237,7 @@ details[open] summary {
   flex-direction:column;
   gap:18px;
   font-size:8px;
-  color:#7b846f;
+  color:#6e7763;
 }
 
 .mini-sidebar>span:first-child,.mini-group {
@@ -1265,6 +1265,10 @@ details[open] summary {
 
 .mini-content>.mono {
   font-size:7px;
+  color:#677a51;
+}
+
+.mini-content>.mini-code {
   color:#82956b;
 }
 
@@ -1275,13 +1279,13 @@ details[open] summary {
 }
 
 .mini-content h3 span {
-  color:#88a759;
+  color:#7d9b4e;
 }
 
 .mini-content p {
   font-size:11px;
   margin:0;
-  color:#7f8d70;
+  color:#6b785c;
 }
 
 .mini-rule {
@@ -1308,7 +1312,6 @@ details[open] summary {
   background:var(--ink);
   font-size:8px;
   line-height:1.9;
-  color:#d3ddca;
 }
 
 .mini-code>span {
@@ -1356,7 +1359,7 @@ details[open] summary {
 
 .closing-bottom .mono {
   font-size:9px;
-  color:#67813d;
+  color:#58712d;
 }
 
 .closing-bottom>a {

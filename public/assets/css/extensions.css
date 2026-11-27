@@ -41,7 +41,7 @@
 .example-languages button[aria-pressed=true] { background: var(--acid); color: var(--ink); border-color: var(--acid); }
 .features-section { background: var(--paper); color: var(--ink); }
 .features-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 45px; margin-bottom: 60px; }
-.features-heading > p { max-width: 370px; font-size: 14px; line-height: 1.85; color: #67765d; }
+.features-heading > p { max-width: 370px; font-size: 14px; line-height: 1.85; color: #64735a; }
 .feature-ledger { display: grid; grid-template-columns: 1fr 1fr; column-gap: 8%; row-gap: 18px; }
 .feature-entry { border-top: 1px solid #cbd5be; padding: 30px 0 32px; min-width: 0; }
 .feature-entry > .mono { color: #799465; font-size: 9px; }
@@ -76,29 +76,29 @@
 .agent-standard-link { display: flex; justify-content: space-between; gap: 15px; font-size: 10px; color: #809d6c; padding: 0 25px 23px; }
 .roadmap-section { background: #e5e0ef; color: var(--ink); overflow: hidden; }
 .roadmap-section .section-label { border-color: #c5bed3; }
-.roadmap-section .section-label .mono { color: #81718e; }
+.roadmap-section .section-label .mono { color: #6f5f7c; opacity: 1; }
 .roadmap-grid { display: grid; grid-template-columns: .85fr 1.15fr; align-items: center; gap: 7%; padding: 30px 0 60px; }
-.roadmap-status { color: #796487; font-size: 8px; display: flex; align-items: center; gap: 10px; margin-bottom: 30px; }
+.roadmap-status { color: #725d80; font-size: 8px; display: flex; align-items: center; gap: 10px; margin-bottom: 30px; }
 .roadmap-status .status-dot { background: #806c95; margin: 0; }
 .roadmap-copy h2 { font-size: clamp(62px, 6.7vw, 108px); line-height: 1.02; letter-spacing: -5px; }
 .roadmap-copy h2 em { color: #806392; }
-.roadmap-copy > p { margin-top: 30px; color: #6b6272; font-size: 15px; line-height: 1.9; max-width: 380px; }
+.roadmap-copy > p { margin-top: 30px; color: #6a6171; font-size: 15px; line-height: 1.9; max-width: 380px; }
 
 .roadmap-note { border-top: 1px solid #c5bed3; padding-top: 23px; display: flex; align-items: baseline; gap: 30px; }
-.roadmap-note .mono { color: #806392; font-size: 8px; flex-shrink: 0; }
-.roadmap-note p { font-size: 11px; color: #82768a; line-height: 1.8; }
+.roadmap-note .mono { color: #775a89; font-size: 8px; flex-shrink: 0; }
+.roadmap-note p { font-size: 11px; color: #6c6174; line-height: 1.8; }
 .closing { position: relative; isolation: isolate; min-height: 690px; display: flex; flex-direction: column; padding-top: 50px; padding-bottom: 35px; overflow: hidden; }
 #pixel-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; mask-image: linear-gradient(90deg, transparent 20%, #000 67%); }
 .closing-top { display: flex; align-items: center; justify-content: space-between; gap: 25px; }
-.closing-top > .eyebrow { color: #607437; font-size: 9px; }
-.pixel-control { display: inline-flex; align-items: center; gap: 9px; color: #607437; border: 0; background: none; padding: 10px 0 10px 10px; }
+.closing-top > .eyebrow { color: #5d7034; font-size: 9px; }
+.pixel-control { display: inline-flex; align-items: center; gap: 9px; color: #5d7034; border: 0; background: none; padding: 10px 0 10px 10px; }
 .pixel-control .mono { font-size: 8px; }
-.pixel-control .control-line { background: repeating-linear-gradient(90deg, #607437 0 1px, transparent 1px 4px); }
+.pixel-control .control-line { background: repeating-linear-gradient(90deg, #5d7034 0 1px, transparent 1px 4px); }
 .pixel-control[aria-pressed=true] .control-line { animation: none; opacity: .5; }
 .closing-main { flex: 1; padding: 80px 0 70px; }
 .closing-main h2 { font-size: clamp(50px, 6.2vw, 98px); }
 .closing-main h2 em { color: #617635; }
-.pixel-caption { display: flex; justify-content: space-between; gap: 20px; padding-bottom: 25px; font-size: 7px; color: #779148; }
+.pixel-caption { display: flex; justify-content: space-between; gap: 20px; padding-bottom: 25px; font-size: 7px; color: #597128; }
 .pixel-touch-hint { display: none; }
 @media (pointer: coarse) { .pixel-pointer-hint { display: none; } .pixel-touch-hint { display: inline; } }
 @media (max-width: 1150px) {
@@ -207,7 +207,7 @@
 .ophelios-signature { display: inline-flex; align-items: center; gap: 11px; }
 .ophelios-signature img { object-fit: contain; }
 .ophelios-signature .tabler-icon { width: 13px; height: 13px; margin-left: -5px; }
-.feature-entry-top { display: flex; justify-content: space-between; align-items: center; gap: 20px; color: #638047; }
+.feature-entry-top { display: flex; justify-content: space-between; align-items: center; gap: 20px; color: #5a773e; }
 .feature-entry-top .mono { font-size: 9px; }
 .feature-entry-top .tabler-icon { width: 30px; height: 30px; stroke-width: 1.25; }
 .product-mark { object-fit: contain; filter: brightness(0); flex-shrink: 0; }
@@ -235,7 +235,7 @@
 .install-top .copy-button { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; }
 .install-line { display: flex; align-items: baseline; gap: 13px; padding: 31px 23px 24px; }
 .install-line code { font: 13px/1.9 var(--mono); color: var(--acid); overflow-wrap: anywhere; }
-.install-prompt, .install-next i { font: 11px var(--mono); color: #71845f; font-style: normal; user-select: none; }
+.install-prompt, .install-next i { font: 11px var(--mono); color: #748862; font-style: normal; user-select: none; }
 .install-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 23px; border-top: 1px solid #35432d; font-size: 9px; line-height: 1.7; color: #81946f; }
 .install-footer a { display: flex; align-items: center; gap: 5px; color: #b0c39b; }
 .install-footer .tabler-icon { width: 12px; height: 12px; }
@@ -243,7 +243,7 @@
 /* An engineering sketch of a chain becoming application data. */
 .roadmap-grid { padding-bottom: 55px; }
 .chain-study { min-width: 0; }
-.chain-study-header, .chain-study-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; color: #806b90; font-size: 8px; line-height: 1.8; }
+.chain-study-header, .chain-study-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; color: #705b80; font-size: 8px; line-height: 1.8; }
 .chain-study-footer { padding-top: 19px; border-top: 1px solid #c5bed3; }
 .chain-visual { position: relative; aspect-ratio: 600/390; margin: 22px 0 15px; }
 .chain-topology { width: 100%; height: 100%; }
@@ -251,20 +251,20 @@
 .chain-lines circle { fill: #a38bb6; }
 .chain-signal { stroke: #613577; stroke-width: 2.2; stroke-dasharray: 12 450; animation: chain-signal 8s linear infinite; }
 .chain-signal-return { animation-delay: -4s; }
-.chain-node-label, .chain-php-label, .chain-output-label { position: absolute; bottom: 0; font-size: 8px; color: #806b90; }
+.chain-node-label, .chain-php-label, .chain-output-label { position: absolute; bottom: 0; font-size: 8px; color: #705b80; }
 .chain-node-label { left: 13%; }
 .chain-php-label { left: 47%; }
 .chain-output-label { right: 7%; }
 .roadmap-paths-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 25px; margin-bottom: 25px; }
 .roadmap-paths-heading .eyebrow { color: #715c80; font-size: 10px; }
-.roadmap-paths-heading > .mono { font-size: 8px; color: #887398; }
+.roadmap-paths-heading > .mono { font-size: 8px; color: #725d81; }
 .roadmap-paths { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 0 5%; margin-bottom: 30px; }
 .roadmap-path { padding: 25px 0 30px; border-top: 1px solid #c5bed3; }
-.roadmap-path-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; color: #806392; }
+.roadmap-path-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; color: #775a89; }
 .roadmap-path-top .mono { font-size: 8px; }
 .roadmap-path-top .tabler-icon { width: 26px; height: 26px; stroke-width: 1.3; }
 .roadmap-path h4 { font-family: var(--heading); font-weight: 500; font-size: 24px; line-height: 1.25; letter-spacing: -.85px; margin: 22px 0 14px; max-width: 310px; }
-.roadmap-path p { color: #706477; font-size: 13px; line-height: 1.85; }
+.roadmap-path p { color: #6d6173; font-size: 13px; line-height: 1.85; }
 @keyframes chain-signal { to { stroke-dashoffset: -924; } }
 .closing-main { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 35px; }
 .closing-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 30px; }
