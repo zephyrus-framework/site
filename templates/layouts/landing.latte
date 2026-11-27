@@ -8,6 +8,7 @@
 <footer class="site-footer"><a class="brand" href="{$leafBaseUrl}{$localePrefix}/">{include '../partials/mark.latte'}<span>zephyrus.</span></a><p>{localize('common.footer_location')}</p><div><a class="ophelios-signature" href="https://ophelios.com" target="_blank" rel="noopener"><img src="{$leafBaseUrl}/assets/brands/ophelios-white.png" width="35" height="24" alt="" loading="lazy">{localize('common.footer_project')}{include '../partials/icon.latte', name: 'arrow-up-right'}</a><span>© {date('Y')}</span></div></footer>
 <script defer src="{$leafBaseUrl}/assets/js/wind.js"></script>
 <script defer src="{$leafBaseUrl}/assets/js/pixels.js"></script>
+{include '../partials/search-modal.latte'}
 {include '../partials/ui-strings.latte'}
 </body>
 </html>

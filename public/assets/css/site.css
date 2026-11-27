@@ -1988,6 +1988,20 @@ details[open] summary {
   margin-bottom:35px;
 }
 
+.error-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+}
+
+.button-outline {
+  border:1px solid var(--ink);
+}
+
+.button-outline:hover {
+  background:#e7ebde;
+}
+
 html.motion-ready [data-reveal] {
   opacity:0;
   transform:translateY(20px);
@@ -2094,6 +2108,25 @@ html.motion-ready [data-reveal].is-visible {
   }
   .docs-teaser-main {
     gap:7%;
+  }
+}
+
+/* The landing header carries three more links than the docs one: its search button goes icon-only sooner. */
+@media(max-width:900px) {
+  .landing-page .search-trigger {
+    padding:9px;
+  }
+  .landing-page .search-trigger kbd {
+    display:none;
+  }
+  /* Hidden from view only: the label stays the button's accessible name. */
+  .landing-page .search-trigger>span {
+    position:absolute;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    clip-path:inset(50%);
+    white-space:nowrap;
   }
 }
 
@@ -2742,8 +2775,17 @@ html.motion-ready [data-reveal].is-visible {
     padding:9px;
     border-color:#3f5038;
   }
-  .search-trigger>span,.search-trigger kbd {
+  .search-trigger kbd {
     display:none;
+  }
+  /* Hidden from view only: the label stays the button's accessible name. */
+  .search-trigger>span {
+    position:absolute;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    clip-path:inset(50%);
+    white-space:nowrap;
   }
   .docs-mobile-bar {
     display:flex;

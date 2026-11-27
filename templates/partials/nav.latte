@@ -12,7 +12,7 @@
     <div class="header-actions">
         {include 'languages.latte'}
         <a class="github-link" href="{$leafGithubUrl}" target="_blank" rel="noopener">{include 'icon.latte', name: 'brand-github'} GitHub</a>
-        {if $docsMode ?? false}<button class="search-trigger" aria-label="{localize('common.search_label')}" data-search-open>{include 'icon.latte', name: 'search'}<span>{localize('common.search')}</span><kbd>⌘ K</kbd></button>{/if}
+        <button class="search-trigger" aria-keyshortcuts="Control+K Meta+K" data-search-open>{include 'icon.latte', name: 'search'}<span>{localize('common.search')}</span><kbd aria-hidden="true">⌘ K</kbd></button>
         <button class="menu-toggle" aria-label="{localize('ui.open_menu')}" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button>
     </div>
     <nav id="mobile-nav" class="mobile-nav" aria-label="{localize('common.mobile_navigation')}" hidden>
