@@ -331,7 +331,13 @@
   .site-footer > div { flex-direction: row; align-items: center; width: 100%; justify-content: space-between; }
   .ophelios-signature img { width: 30px; height: 21px; }
 }
-@media (max-width: 360px) { .landing-page .header-actions { gap: 4px; } }
+/* Room between the brand and the language switch: the docs header's brand size, and a menu icon aligned on the gutter. */
+@media (max-width: 360px) {
+  .landing-page .header-actions { gap: 4px; }
+  .landing-page .brand { font-size: 23px; }
+  .landing-page .brand-mark { width: 27px; height: 27px; }
+  .landing-page .menu-toggle { margin-right: -10px; }
+}
 @media (prefers-reduced-motion: reduce) { .chain-signal { animation: none; } }
 
 .copy-button { display: inline-flex; align-items: center; gap: 8px; }
