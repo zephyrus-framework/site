@@ -117,7 +117,7 @@
   .header-actions { gap: 14px; }
   .main-nav { gap: 16px; }
   .code-tab { padding: 9px 0; }
-  .code-menu { row-gap: 12px; }
+  .code-tabs { row-gap: 12px; }
   .features-heading { gap: 30px; }
   .features-heading > p { max-width: 280px; font-size: 12px; }
   .feature-entry h3 { font-size: 24px; }
@@ -147,7 +147,7 @@
   .language-switch { gap: 5px; font-size: 9px; }
   .language-switch a { padding: 12px 3px; }
   .docs-page .header-actions { gap: 15px; }
-  .code-menu { grid-template-columns: repeat(2, 1fr); gap: 8px 18px; }
+  .code-tabs { grid-template-columns: repeat(2, 1fr); gap: 8px 18px; }
   .code-tab { padding: 5px 0 9px; }
   .code-tab > span:nth-child(2) { font-size: 13px; }
   .locale-specimen code, .locale-call code { font-size: 10px; }

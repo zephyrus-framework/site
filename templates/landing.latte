@@ -31,12 +31,14 @@
         <div class="section-label"><span class="eyebrow">{localize('landing.code_label')}</span><span class="mono">{localize('landing.code_caption')}</span></div>
         <div class="code-intro"><h2 data-reveal>{localize('landing.code_title')}<br><em>{localize('landing.code_title_accent')}</em></h2><p data-reveal>{localize('landing.code_intro_1')}<br>{localize('landing.code_intro_2')}<br>{localize('landing.code_intro_3')}</p></div>
         <div class="code-workbench" data-reveal>
-            <div class="code-menu" role="tablist" aria-label="{localize('landing.code_examples_label')}" aria-orientation="vertical">
+            <div class="code-menu">
+                <div class="code-tabs" role="tablist" aria-label="{localize('landing.code_examples_label')}" aria-orientation="vertical">
                 <button id="tab-routing" class="code-tab active" role="tab" aria-selected="true" aria-controls="panel-routing" data-code-tab="routing" data-file="ProductController.php" data-language="PHP"><span class="mono">01</span><span>{localize('landing.routing')}<small>{localize('landing.routing_caption')}</small></span><span class="tab-arrow">↗</span></button>
                 <button id="tab-responses" class="code-tab" role="tab" aria-selected="false" aria-controls="panel-responses" tabindex="-1" data-code-tab="responses" data-file="Response.php" data-language="PHP"><span class="mono">02</span><span>HTTP<small>{localize('landing.http_caption')}</small></span><span class="tab-arrow">↗</span></button>
                 <button id="tab-config" class="code-tab" role="tab" aria-selected="false" aria-controls="panel-config" tabindex="-1" data-code-tab="config" data-file="config.yml" data-language="YAML"><span class="mono">03</span><span>Configuration<small>{localize('landing.config_caption')}</small></span><span class="tab-arrow">↗</span></button>
                 <button id="tab-localization" class="code-tab" role="tab" aria-selected="false" aria-controls="panel-localization" tabindex="-1" data-code-tab="localization" data-file="locale/en + locale/fr" data-language="JSON / PHP"><span class="mono">04</span><span>{localize('landing.localization')}<small>{localize('landing.localization_caption')}</small></span><span class="tab-arrow">↗</span></button>
                 <button id="tab-data" class="code-tab" role="tab" aria-selected="false" aria-controls="panel-data" tabindex="-1" data-code-tab="data" data-file="ProductBroker.php" data-language="PHP / SQL"><span class="mono">05</span><span>{localize('landing.data')}<small>{localize('landing.data_caption')}</small></span><span class="tab-arrow">↗</span></button>
+                </div>
                 <a class="workbench-docs" href="{$leafBaseUrl}{$localePrefix}/getting-started/introduction/">{localize('landing.workbench_docs')} <span>↗</span></a>
             </div>
             <div class="code-window">
