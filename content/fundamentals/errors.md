@@ -205,7 +205,7 @@ An entry is an exact address, or `<secret>@address`, which also requires the coo
 | Entry | Refusal |
 | --- | --- |
 | `@172.17.0.1` | `Debug client allowlist entry 1 has an empty secret before "@": with no tracy-debug cookie it would admit every client at that address. Set a secret, or list the bare address if that is intended.` |
-| `short-secret@172.17.0.1` | `Debug client allowlist entry 1 has a secret shorter than 16 characters before "@": the tracy-debug cookie is all that guards the debugger at that address. Use a longer random secret.` |
+| <span class="nobr">`short-secret@172.17.0.1`</span> | `Debug client allowlist entry 1 has a secret shorter than 16 characters before "@": the tracy-debug cookie is all that guards the debugger at that address. Use a longer random secret.` |
 | `<secret>@` | `Debug client allowlist entry 1 has no address after "@".` |
 | `10.0.0.0/8` | `Debug client allowlist entry 1 is a range: Tracy matches exact addresses only, so list each address.` |
 | array element `'a b'` | `Debug client allowlist entry 1 holds whitespace or a comma: pass each address as its own array entry.` |
