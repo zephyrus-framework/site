@@ -57,6 +57,11 @@ html {
   scroll-padding-top:110px;
 }
 
+/* Anchored headings land just below the fixed header, and below the chapter bar on phones. */
+html:has(>.docs-page) {
+  scroll-padding-top:104px;
+}
+
 body {
   margin:0;
   background:var(--ink);
@@ -1582,7 +1587,6 @@ details[open] summary {
   font-size:27px;
   letter-spacing:-.04em;
   margin:42px 0 16px;
-  scroll-margin-top:115px;
   position:relative;
 }
 
@@ -1590,7 +1594,6 @@ details[open] summary {
   font-size:20px;
   letter-spacing:-.03em;
   margin:30px 0 14px;
-  scroll-margin-top:115px;
   position:relative;
 }
 
@@ -2809,6 +2812,9 @@ html.motion-ready [data-reveal].is-visible {
     z-index:15;
     color:#5b6f44;
   }
+  html:has(>.docs-page) {
+    scroll-padding-top:141px;
+  }
   .docs-mobile-bar>.mono {
     font-size:8px;
   }
@@ -2884,10 +2890,6 @@ html.motion-ready [data-reveal].is-visible {
   .prose h2 {
     font-size:25px;
     margin-top:35px;
-    scroll-margin-top:142px;
-  }
-  .prose h3 {
-    scroll-margin-top:142px;
   }
   .prose p,.prose li {
     font-size:13px;
