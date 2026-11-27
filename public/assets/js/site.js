@@ -1,6 +1,7 @@
 (() => {
   'use strict';
   const ui = document.querySelector('#ui-strings')?.dataset || {};
+  addEventListener('load', () => requestAnimationFrame(() => document.documentElement.classList.add('smooth-scroll')), { once: true });
   const localePrefix = document.body.dataset.localePrefix || '';
   document.querySelectorAll('[data-language-link]').forEach(link => {
     link.href += location.hash;

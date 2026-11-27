@@ -53,8 +53,14 @@
 }
 
 html {
-  scroll-behavior:smooth;
   scroll-padding-top:110px;
+}
+
+/* Smooth only once the page has opened (site.js), so a link into a long page jumps straight to its anchor. */
+@media(prefers-reduced-motion:no-preference) {
+  html.smooth-scroll {
+    scroll-behavior:smooth;
+  }
 }
 
 /* Anchored headings land just below the fixed header, and below the chapter bar on phones. */
@@ -2994,9 +3000,6 @@ html.motion-ready [data-reveal].is-visible {
 }
 
 @media(prefers-reduced-motion:reduce) {
-  html {
-    scroll-behavior:auto;
-  }
   *,*:before,*:after {
     animation:none!important;
     transition:none!important;
