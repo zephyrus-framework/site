@@ -142,6 +142,20 @@
     table.querySelectorAll('th').forEach(cell => cell.setAttribute('role', cell.closest('thead') ? 'columnheader' : 'rowheader'));
     table.querySelectorAll('td').forEach(cell => cell.setAttribute('role', 'cell'));
   });
+  // A table frame that scrolls sideways becomes a named region in the tab order, so a keyboard can scroll it.
+  function markScrollable(frame) {
+    if (frame.scrollWidth > frame.clientWidth) {
+      const columns = [...frame.querySelectorAll('th')].map(cell => cell.textContent.trim()).join(', ');
+      frame.tabIndex = 0; frame.setAttribute('role', 'region');
+      frame.setAttribute('aria-label', (ui.tableScroll || 'Scrollable table: {caption}').replace('{caption}', () => columns));
+    } else {
+      frame.removeAttribute('tabindex'); frame.removeAttribute('role'); frame.removeAttribute('aria-label');
+    }
+  }
+  if ('ResizeObserver' in window) {
+    const frames = new ResizeObserver(entries => entries.forEach(entry => markScrollable(entry.target.closest('.table-scroll'))));
+    document.querySelectorAll('.prose .table-scroll').forEach(frame => { frames.observe(frame); frames.observe(frame.querySelector('table') ?? frame); });
+  }
 
   const dialog = document.querySelector('.search-dialog');
   if (!dialog) return;

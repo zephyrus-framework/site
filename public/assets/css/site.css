@@ -1691,6 +1691,21 @@ details[open] summary {
   margin:24px 0;
 }
 
+/* Edge shadows show that a table runs past its frame; the paper-coloured covers hide them at either end. */
+.table-scroll {
+  overflow-x:auto;
+  margin:24px 0;
+  background:linear-gradient(90deg,var(--paper) 50%,#f3f2e900) left/48px 100% no-repeat local,linear-gradient(270deg,var(--paper) 50%,#f3f2e900) right/48px 100% no-repeat local,linear-gradient(90deg,#151b1840,#151b1800) left/20px 100% no-repeat scroll,linear-gradient(270deg,#151b1840,#151b1800) right/20px 100% no-repeat scroll;
+}
+
+.table-scroll>table {
+  margin:0;
+}
+
+.table-scroll:focus-visible {
+  outline-offset:2px;
+}
+
 .prose th {
   text-align:left;
   background:#e7ebde;
@@ -2281,17 +2296,6 @@ html.motion-ready [data-reveal].is-visible {
   }
   .prose p {
     font-size:13px;
-  }
-  .prose table {
-    display:block;
-    overflow-x:auto;
-    container-type:inline-size;
-  }
-  /* An empty caption as wide as the box keeps a narrow table full width once it is a scroll container. */
-  .prose table:before {
-    content:"";
-    display:table-caption;
-    min-width:100cqi;
   }
 }
 
@@ -2884,9 +2888,6 @@ html.motion-ready [data-reveal].is-visible {
     overflow:hidden;
     clip-path:inset(50%);
     white-space:nowrap;
-  }
-  .refusal-table table:before {
-    content:none;
   }
   .refusal-table tbody,.refusal-table tr,.refusal-table td {
     display:block;
