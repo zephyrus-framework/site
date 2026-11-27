@@ -71,7 +71,8 @@
 .agent-command { margin: 0 25px; border: 1px solid #49633d; background: var(--ink); }
 .agent-command > div { display: flex; justify-content: space-between; align-items: center; gap: 15px; padding: 12px 15px; border-bottom: 1px solid #34452c; }
 .agent-command .mono { font-size: 8px; color: #8aa274; }
-.agent-command pre { margin: 0; padding: 18px 15px; overflow: auto; }
+/* The same edge shadows as wide tables: the ink-coloured covers hide them at either end. */
+.agent-command pre { margin: 0; padding: 18px 15px; overflow: auto; background: linear-gradient(90deg, var(--ink) 50%, #151b1800) left / 48px 100% no-repeat local, linear-gradient(270deg, var(--ink) 50%, #151b1800) right / 48px 100% no-repeat local, linear-gradient(90deg, #000000cc, #00000000) left / 20px 100% no-repeat scroll, linear-gradient(270deg, #000000cc, #00000000) right / 20px 100% no-repeat scroll; }
 .agent-command pre:focus-visible { outline-color: var(--acid); outline-offset: -4px; }
 .agent-command code { font: 10px/1.8 var(--mono); color: var(--acid); white-space: pre; }
 .agent-install-note { font-size: 11px; color: #8ea77a; line-height: 1.85; margin: 17px 25px 25px; }
