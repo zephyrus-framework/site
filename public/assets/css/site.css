@@ -1706,6 +1706,10 @@ details[open] summary {
   outline-offset:2px;
 }
 
+.refusal-table {
+  container-type:inline-size;
+}
+
 .prose th {
   text-align:left;
   background:#e7ebde;
@@ -2880,7 +2884,8 @@ html.motion-ready [data-reveal].is-visible {
   }
 }
 
-@media(max-width:480px) {
+/* Stacked whenever the text column is narrow, beside the sidebar as on a phone. */
+@container (max-width:440px) {
   .refusal-table thead {
     position:absolute;
     width:1px;
