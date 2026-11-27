@@ -81,7 +81,7 @@ npm run qa
 npm run capture
 ```
 
-QA verifies both languages, all documentation destinations, locale switching and search, clipboard commands, responsive overflow, canvas animation and reduced motion. It also checks pixel dispersal, silhouette reconstruction, pause and touch behavior in the closing CTA. The SEO audit covers all 18 indexable pages, unique localized metadata, canonical and alternate URLs, structured data, image dimensions and the sitemap. SVG icons are checked for actual rendered geometry. Captures include both languages on desktop, tablet and mobile, plus the developer, roadmap and CTA sections. They are saved to the ignored `artifacts/` directory. To test another local server, set `PREVIEW_URL`.
+QA verifies both languages, all documentation destinations, locale switching and search, clipboard commands, responsive overflow, canvas animation and reduced motion. It also checks pixel dispersal, silhouette reconstruction, pause and touch behavior in the closing CTA. The SEO audit covers every indexable page in both languages (the home page and each chapter under `content/`, matched against the sitemap), unique localized metadata, canonical and alternate URLs, structured data, image dimensions and the sitemap. SVG icons are checked for actual rendered geometry. Captures include both languages on desktop, tablet and mobile, plus the developer, roadmap and CTA sections. They are saved to the ignored `artifacts/` directory. To test another local server, set `PREVIEW_URL`.
 
 ## Social image
 
