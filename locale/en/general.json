@@ -164,6 +164,7 @@
     "scope": "Attribute routes. Middleware registration. Broker, Service and Entity patterns. JSON localization. Latte templates. Configuration and testing conventions.",
     "install": "ADD TO YOUR CODING TOOLS",
     "copy": "Copy skill installation command",
+    "command_label": "Skill installation command",
     "install_note": "Run in your project, then choose your coding agents. The installer supports tools that implement the Agent Skills format.",
     "standard": "Built on the open Agent Skills format",
     "caption": "SKILL.md / OPEN STANDARD",

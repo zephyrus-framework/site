@@ -70,6 +70,7 @@
 .agent-command > div { display: flex; justify-content: space-between; align-items: center; gap: 15px; padding: 12px 15px; border-bottom: 1px solid #34452c; }
 .agent-command .mono { font-size: 8px; color: #8aa274; }
 .agent-command pre { margin: 0; padding: 18px 15px; overflow: auto; }
+.agent-command pre:focus-visible { outline-color: var(--acid); outline-offset: -4px; }
 .agent-command code { font: 10px/1.8 var(--mono); color: var(--acid); white-space: pre; }
 .agent-install-note { font-size: 11px; color: #8ea77a; line-height: 1.85; margin: 17px 25px 25px; }
 .agent-compatible { margin: 0 25px; padding: 20px 0; border-top: 1px solid #3a502f; display: flex; justify-content: space-between; gap: 15px; color: #b7cda5; font-size: 11px; }

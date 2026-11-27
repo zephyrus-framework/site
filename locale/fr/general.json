@@ -164,6 +164,7 @@
     "scope": "Routes par attributs. Enregistrement des middlewares. Modèles Broker, Service et Entity. Localisation JSON. Templates Latte. Conventions de configuration et de tests.",
     "install": "AJOUTER À VOS OUTILS",
     "copy": "Copier la commande d’installation du skill",
+    "command_label": "Commande d’installation du skill",
     "install_note": "Lancez la commande dans votre projet, puis choisissez vos agents. L’installateur prend en charge les outils compatibles avec le format Agent Skills.",
     "standard": "Basé sur le format ouvert Agent Skills",
     "caption": "SKILL.md / FORMAT OUVERT",

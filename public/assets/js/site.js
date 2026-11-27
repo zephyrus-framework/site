@@ -142,19 +142,22 @@
     table.querySelectorAll('th').forEach(cell => cell.setAttribute('role', cell.closest('thead') ? 'columnheader' : 'rowheader'));
     table.querySelectorAll('td').forEach(cell => cell.setAttribute('role', 'cell'));
   });
-  // A table frame that scrolls sideways becomes a named region in the tab order, so a keyboard can scroll it.
+  // A frame that scrolls sideways becomes a named region in the tab order, so a keyboard can scroll it.
+  const scrollFrameSelector = '.prose .table-scroll, [data-scroll-label]';
+  const scrollLabel = frame => frame.dataset.scrollLabel
+    ?? (ui.tableScroll || 'Scrollable table: {caption}').replace('{caption}', () => [...frame.querySelectorAll('th')].map(cell => cell.textContent.trim()).join(', '));
   function markScrollable(frame) {
     if (frame.scrollWidth > frame.clientWidth) {
-      const columns = [...frame.querySelectorAll('th')].map(cell => cell.textContent.trim()).join(', ');
-      frame.tabIndex = 0; frame.setAttribute('role', 'region');
-      frame.setAttribute('aria-label', (ui.tableScroll || 'Scrollable table: {caption}').replace('{caption}', () => columns));
+      frame.tabIndex = 0; frame.setAttribute('role', 'region'); frame.setAttribute('aria-label', scrollLabel(frame));
     } else {
       frame.removeAttribute('tabindex'); frame.removeAttribute('role'); frame.removeAttribute('aria-label');
     }
   }
   if ('ResizeObserver' in window) {
-    const frames = new ResizeObserver(entries => entries.forEach(entry => markScrollable(entry.target.closest('.table-scroll'))));
-    document.querySelectorAll('.prose .table-scroll').forEach(frame => { frames.observe(frame); frames.observe(frame.querySelector('table') ?? frame); });
+    const scrollFrames = document.querySelectorAll(scrollFrameSelector);
+    const frames = new ResizeObserver(entries => entries.forEach(entry => markScrollable(entry.target.closest(scrollFrameSelector))));
+    scrollFrames.forEach(frame => { frames.observe(frame); frames.observe(frame.querySelector('table') ?? frame); });
+    document.fonts?.ready.then(() => scrollFrames.forEach(markScrollable));
   }
 
   const dialog = document.querySelector('.search-dialog');
